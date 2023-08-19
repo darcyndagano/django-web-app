@@ -1,0 +1,18 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<body>
+     <h1>liste des annonces</h1>
+        <p>Les titres sont : </p>
+        <ul>
+            {% for li in list %}
+                <li>
+                    <a href="{% url 'listing-detail' li.id %}">{{ li.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'listing-create' %}">Ajouter une affiche</a>
+</body>
+
+{% endblock %}

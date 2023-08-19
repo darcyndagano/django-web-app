@@ -1,0 +1,14 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<h2>{{ list.title }}</h2>
+
+<ul>
+  <li>Description : {{list.description}}</li>
+  <li>Année : {{ list.year }}</li>
+</ul>
+<a href="{% url 'listing-change' list.id %}">Modifier cette affiche</a>
+<a href="{% url 'listing-delete' list.id %}">Supprimer cette affiche</a>
+<a href="{% url 'listing-list' %}">Retour à tous les affiches</a>
+
+{% endblock %}
